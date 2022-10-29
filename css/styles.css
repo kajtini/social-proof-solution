@@ -1,0 +1,274 @@
+:root {
+  --clr-primary-dark: hsl(300, 43%, 22%);
+  --clr-primary-soft: hsl(333, 80%, 67%);
+
+  --clr-neutral-dark: hsl(303, 10%, 53%);
+  --clr-neutral-light: hsl(300, 24%, 96%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
+
+  --font-primary: "League Spartan", sans-serif;
+
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+}
+
+/* GLOBAL RESET */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* PAGE */
+body {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-primary);
+  font-size: 15px;
+
+  background-image: url(../images/bg-pattern-top-mobile.svg),
+    url(../images/bg-pattern-bottom-mobile.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
+}
+
+main {
+  margin: 4rem 1.2rem;
+  max-width: 1100px;
+}
+
+.description__title {
+  font-size: 2.3rem;
+  width: 70%;
+  margin-bottom: 1rem;
+  max-width: 40rem;
+  text-align: center;
+  margin-inline: auto;
+  line-height: normal;
+  font-weight: var(--fw-700);
+  color: var(--clr-primary-dark);
+
+  background: linear-gradient(to right, hsl(300, 43%, 22%), hsl(300, 42%, 35%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description__overview {
+  width: 80%;
+  margin-bottom: 2rem;
+  max-width: 24rem;
+  margin-inline: auto;
+  text-align: center;
+  font-weight: var(--fw-500);
+  color: var(--clr-neutral-dark);
+}
+
+.reviews-stats {
+  margin-bottom: 3rem;
+}
+
+.stats__simple {
+  border-radius: 5px;
+  padding: 0.8rem 0;
+  margin-bottom: 1rem;
+  width: 100%;
+  background-color: var(--clr-neutral-light);
+}
+
+.stats__simple:last-child {
+  margin: 0;
+}
+
+.stars-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+  gap: 8px;
+}
+
+.stats__type {
+  text-align: center;
+  font-weight: var(--fw-700);
+  color: var(--clr-primary-dark);
+}
+
+.reviews__review {
+  padding: 2.5rem 2rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+
+  background: linear-gradient(
+    to bottom,
+    hsl(300, 43%, 22%),
+    hsl(300, 43%, 30%)
+  );
+
+  /* background-color: var(--clr-primary-dark); */
+}
+
+.reviews__review:last-child {
+  margin: 0;
+}
+
+.review__author {
+  height: 3rem;
+  border-radius: 50%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.review__name {
+  font-weight: var(--fw-500);
+  color: var(--clr-neutral-white);
+}
+
+.title {
+  color: var(--clr-primary-soft);
+}
+
+.review__description {
+  color: var(--clr-neutral-white);
+}
+
+@media (min-width: 375px) {
+  body {
+    background-image: url(../images/bg-pattern-top-desktop.svg),
+      url(../images/bg-pattern-bottom-desktop.svg);
+    background-repeat: no-repeat, no-repeat;
+  }
+}
+
+@media (min-width: 900px) {
+  .flex-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
+  .primary-description > * {
+    text-align: left;
+    margin: 0;
+  }
+
+  .description__title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .stats__simple {
+    display: flex;
+    align-items: center;
+    width: 420px;
+    gap: 2rem;
+    padding: 0.8rem 0rem 0.8rem 2rem;
+  }
+
+  .stats__simple:nth-child(1) {
+    margin-left: -6rem;
+  }
+
+  .stats__simple:nth-child(2) {
+    margin-left: -3rem;
+  }
+
+  .reviews {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .reviews > article {
+    /* max-height: 15rem; */
+    flex-basis: 31%;
+    margin: 0;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .reviews__review:nth-child(2) {
+    margin-top: 12px;
+  }
+  .reviews__review:nth-child(3) {
+    margin-top: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .reviews > article {
+    max-height: 15rem;
+  }
+}
